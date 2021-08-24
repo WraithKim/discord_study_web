@@ -1,6 +1,7 @@
 package com.caurgk.studylog.domains.studylog;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor
+@EqualsAndHashCode
 public class StudyLog {
     // TODO: bot에 구현된 column constraint와 맞추기
     @Id
