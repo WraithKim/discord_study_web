@@ -36,7 +36,7 @@ public class StudyLogControllerTest {
 
     @Test
     public void getIndex() throws Exception {
-        ResponseEntity<String> response = template.getForEntity("/", String.class);
+        ResponseEntity<String> response = template.getForEntity("/api/v1/", String.class);
         assertThat(response.getBody()).isEqualTo("Spring application status is OK");
     }
 
@@ -52,7 +52,7 @@ public class StudyLogControllerTest {
         studyLogRepository.save(expected);
 
         // when
-        ResponseEntity<List<StudyLogDto>> response = template.exchange("/list", HttpMethod.GET, null, new ParameterizedTypeReference<List<StudyLogDto>>(){});
+        ResponseEntity<List<StudyLogDto>> response = template.exchange("/api/v1/list", HttpMethod.GET, null, new ParameterizedTypeReference<List<StudyLogDto>>(){});
 
         // then
         StudyLog actual = response.getBody().get(0).toEntity();
