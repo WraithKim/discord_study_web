@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1")
-public class StudyLogController {
+public class StudyLogApiController {
 
     private final StudyLogService studyLogService;
 
