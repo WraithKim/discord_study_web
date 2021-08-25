@@ -14,5 +14,5 @@ spring:
       enabled: true
   jpa:
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
-      hibernate.storage_engine: innodb
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
