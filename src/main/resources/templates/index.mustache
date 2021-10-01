@@ -1,25 +1,44 @@
 {{>layouts/header}}
 <h1>랜선 각자 코딩 스터디 기록</h1>
-<div class="col-md-12">
-    <table class="table table-horizontal table-bordered">
-        <thead class="thead-strong">
-        <tr>
-            <th>번호</th>
-            <th>사용자 ID</th>
-            <th>시작 시간</th>
-            <th>끝 시간</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        {{#studyLogs}}
-            <tr>
-                <td>{{id}}</td>
-                <td>{{userId}}</td>
-                <td>{{startTime}}</td>
-                <td>{{endTime}}</td>
-            </tr>
-        {{/studyLogs}}
-        </tbody>
-    </table>
+<div class="container">
+    <div class="row">
+        {{#userName}}
+            <div class="col-4">
+                <label>user ID: {{userName}}</label>
+            </div>
+            <div class="col-2">
+                <a href="/logout" role="button" class="btn btn-warning">Logout</a>
+            </div>
+        {{/userName}}
+        {{^userName}}
+            <div class="col-2">
+                <a href="/oauth2/authorization/discord" class="btn btn-primary">Login</a>
+            </div>
+        {{/userName}}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-horizontal table-bordered">
+                <thead class="thead-strong">
+                <tr>
+                    <th>번호</th>
+                    <th>사용자 ID</th>
+                    <th>시작 시간</th>
+                    <th>끝 시간</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                {{#studyLogs}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{userId}}</td>
+                        <td>{{startTime}}</td>
+                        <td>{{endTime}}</td>
+                    </tr>
+                {{/studyLogs}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 {{>layouts/footer}}
